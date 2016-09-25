@@ -15,6 +15,12 @@ app.use('/pets', petRouter);
 
 mongoose.connect("mongodb://localhost:27017/petTable");
 
+app.get("/*", function(req,res){
+    console.log("Here is the property: ", req.params[0]);
+    var file = req.params[0] || "/views/index.html";
+    res.sendFile(path.join(__dirname, "/public/", file));
+});
+
 app.listen(port, function(){
   console.log('listening on', port);
 });

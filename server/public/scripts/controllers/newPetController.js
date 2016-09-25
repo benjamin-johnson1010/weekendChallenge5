@@ -1,9 +1,6 @@
-console.log('js sourced');
 
-var myApp = angular.module('myApp', []);
-var allPets = [];
 //create function to send new pet information to the server
-myApp.controller('petsController', ['$scope', '$http', function($scope, $http){
+myApp.controller('newPetController', ['$scope', '$http', function($scope, $http){
   console.log('NG');
   $scope.newPet = function(){
     console.log('in newPet');
@@ -27,11 +24,9 @@ myApp.controller('petsController', ['$scope', '$http', function($scope, $http){
     }).then(function(response){
       console.log('this is from the server', response);
 
-      // $scope.displayName = response.data.student_name;
-      // $scope.displayScore = response.data.score;
-      // $scope.displayAssignmentNumber = response.data.assignment_number;
-      // $scope.displayDate = response.data.date_completed.substring(0,10);
-
+      $scope.displayName = response.data.petName;
+      $scope.displayAnimal = response.data.animal;
+      $scope.displayAge = response.data.age;
     });
   };
 }]);
