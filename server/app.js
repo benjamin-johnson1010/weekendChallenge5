@@ -15,4 +15,11 @@ app.use('/pets', petRouter);
 
 mongoose.connect("mongodb://localhost:27017/petTable");
 
-app.listen(port, function)
+app.listen(port, function(){
+  console.log('listening on', port);
+});
+app.get('/', function(req, res){
+  console.log('base URL hit');
+  res.sendFile(path.resolve('public/views/index.html'));
+});
+app.use(express.static('public'));
