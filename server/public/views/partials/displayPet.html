@@ -1,3 +1,6 @@
-<p>
-  sourced
-</p>
+<div ng-controller="displayPetsController">
+<button ng-click="displayPet()" placeholder="showP">Click to View Pets</button>
+
+<h3 ng-repeat="pet in allPets">Name: {{pet.petName}} Animal: {{pet.animal}} age: {{pet.age}} <img src="{{pet.picture}}"></img></h3>
+
+</div>

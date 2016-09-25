@@ -13,7 +13,7 @@ myApp.config(["$routeProvider", function($routeProvider){
         controller: "newPetController"
       }).
       when("/displayPet", {
-        templateUrl: "/views/partials/displayP.html",
+        templateUrl: "/views/partials/displayPet.html",
         controller: "displayPetsController"
       }).
       otherwise({

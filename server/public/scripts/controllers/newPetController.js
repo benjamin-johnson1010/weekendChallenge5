@@ -1,7 +1,6 @@
 
 //create function to send new pet information to the server
 myApp.controller('newPetController', ['$scope', '$http', function($scope, $http){
-  console.log('NG');
   $scope.newPet = function(){
     console.log('in newPet');
     //create object to pass to server of pet info
@@ -24,9 +23,10 @@ myApp.controller('newPetController', ['$scope', '$http', function($scope, $http)
     }).then(function(response){
       console.log('this is from the server', response);
 
-      $scope.displayName = response.data.petName;
-      $scope.displayAnimal = response.data.animal;
-      $scope.displayAge = response.data.age;
+      $scope.displayName = 'Name: ' + response.data.petName;
+      $scope.displayAnimal = 'Animal: ' + response.data.animal;
+      $scope.displayAge = 'Age: ' + response.data.age;
+      $scope.displayPicture = response.data.picture;
     });
   };
 }]);

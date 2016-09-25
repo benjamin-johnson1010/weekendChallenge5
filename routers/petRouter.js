@@ -8,19 +8,18 @@ var User = require('../models/pets.js');
 
 router.get('/',function(req, res){
   console.log('in router.get');
-
   User.find({}, function(err, userResults){
     if(err){
         console.log('error occurred', err);
         res.sendStatus(500);
       } else {
-        console.log('hit else');
+        console.log('hit else', userResults);
+
         res.send(userResults);
       }
     });
 });
 router.post('/',function(req, res){
-  console.log('request body:', req.body);
   var sentData = req.body;
   console.log('sentData', sentData);
   var newUser = new User({
