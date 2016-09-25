@@ -20,5 +20,18 @@ myApp.controller('petsController', ['$scope', '$http', function($scope, $http){
    $scope.animal = null;
    $scope.age = null;
    $scope.picture = null;
+   $http({
+      method: 'POST',
+      url: '/pets',
+      data: newInput
+    }).then(function(response){
+      console.log('this is from the server', response);
+
+      // $scope.displayName = response.data.student_name;
+      // $scope.displayScore = response.data.score;
+      // $scope.displayAssignmentNumber = response.data.assignment_number;
+      // $scope.displayDate = response.data.date_completed.substring(0,10);
+
+    });
   };
 }]);

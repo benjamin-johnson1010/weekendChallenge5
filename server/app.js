@@ -11,7 +11,7 @@ var mongoose = require('mongoose');
 var petRouter = require('../routers/petRouter');
 
 //use routers
-app.use('/pet', petRouter);
+app.use('/pets', petRouter);
 
 mongoose.connect("mongodb://localhost:27017/petTable");
 

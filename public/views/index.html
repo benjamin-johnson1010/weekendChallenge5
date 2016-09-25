@@ -5,10 +5,20 @@
     <script src="../vendors/angular.min.js"></script>
     <script src="../vendors/angular-route.min.js"></script>
     <script src="../scripts/client.js" charset="utf-8"></script>
-
     </script>
   </head>
-  <body>
+    <body ng-app="myApp">
+        <h1>GNARLY KID'S LATE ASSIGNMENTS</h1>
+        <div ng-controller="petsController">
 
-  </body>
+          <h4>Enter a pet</h4>
+
+          Pet's Name <input type="text" ng-model="petName" placeholder=""></input>
+          Animal Type <input type="text" ng-model="animal" placeholder=""></input>
+          Pet's Age <input type="number" ng-model="age" placeholder=""></input>
+          Picture of Pet <input type="text" ng-model="picture" placeholder=""></input>
+        <button ng-click="newPet()" placeholder="Submit Brat's Info">Submit</button>
+
+        <h3>Name: {{displayName}} Animal: {{displayAnimal}} age: {{displayAge}}</h1>
+      </div>
 </html>

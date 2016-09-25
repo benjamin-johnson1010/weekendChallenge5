@@ -7,5 +7,6 @@ var userSchema = new Schema({
   age:   Number,
   picture: String
 });
-var User = mongoose.model('petTable', userSchema);
+//sent info to database collection pets
+var User = mongoose.model('pets', userSchema);
 module.exports = User;
