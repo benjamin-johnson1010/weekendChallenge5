@@ -19,3 +19,26 @@ router.get('/',function(req, res){
       }
     });
 });
+router.post('/',function(req, res){
+  console.log('request body:', req.body);
+  var sentData = req.body;
+  console.log('sentData', sentData);
+  var newUser = new User({
+    petName: sentData.petName,
+    animal: sentData.animal,
+    age: sentData.age,
+    picture: sentData.picture
+  });
+  newUser.save(function(err){
+    if(err){
+    console.log('error occurred:', err);
+    res.sendStatus(500);
+  }
+  else{
+    console.log('success', newUser);
+    res.send(newUser);
+  }
+  });
+
+  });
+module.exports = router;

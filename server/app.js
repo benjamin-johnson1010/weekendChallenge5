@@ -8,10 +8,10 @@ app.use(bodyParser.json());
 var mongoose = require('mongoose');
 
 //routers
-var userRouter = require('../routers/petRouter');
+var petRouter = require('../routers/petRouter');
 
 //use routers
-app.use('/pets', petRouter);
+app.use('/pet', petRouter);
 
 mongoose.connect("mongodb://localhost:27017/petTable");
 
