@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 
 //model
 var User = require('../models/pets.js');
-
+//get the objects from the databse to send back
 router.get('/',function(req, res){
   console.log('in router.get');
   User.find({}, function(err, userResults){
@@ -34,6 +34,7 @@ router.post('/',function(req, res){
     res.sendStatus(500);
   }
   else{
+    //sent back new pet after being stored in database
     console.log('success', newUser);
     res.send(newUser);
   }

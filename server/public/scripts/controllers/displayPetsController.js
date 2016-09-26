@@ -1,5 +1,6 @@
 myApp.controller('displayPetsController', ["$scope", '$http', function($scope, $http){
 console.log('in displayPetsController');
+//get the pets to display on DOM
     $scope.displayPet = function(){
     console.log('in displayPet');
       //call to get the pets in the database

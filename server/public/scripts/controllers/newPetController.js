@@ -10,19 +10,19 @@ myApp.controller('newPetController', ['$scope', '$http', function($scope, $http)
       age: $scope.age,
       picture: $scope.picture
     };
-    //this.product = newInput;
-
+    //set input fields back to blank
    $scope.petName = null;
    $scope.animal = null;
    $scope.age = null;
    $scope.picture = null;
+   //send newInput data to server
    $http({
       method: 'POST',
       url: '/pets',
       data: newInput
     }).then(function(response){
       console.log('this is from the server', response);
-
+//display the new pet on DOM
       $scope.displayName = 'Name: ' + response.data.petName;
       $scope.displayAnimal = 'Animal: ' + response.data.animal;
       $scope.displayAge = 'Age: ' + response.data.age;

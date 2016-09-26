@@ -1,5 +1,6 @@
 <div ng-controller="displayPetsController">
-<button ng-click="displayPet()" placeholder="showP">Click to View Pets</button>
+  <!--show displayPets on load-->
+<div ng-init="displayPet()" placeholder="showP"></div>
 
 <h3 ng-repeat="pet in allPets">Name: {{pet.petName}} Animal: {{pet.animal}} age: {{pet.age}} <img src="{{pet.picture}}"></img></h3>
 
